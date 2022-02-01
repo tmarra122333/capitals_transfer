@@ -1,4 +1,7 @@
 # an list of state dictionaries
+#Creating a random list of states
+
+
 states = [
 {
     "name": "Alabama",
@@ -151,3 +154,42 @@ states = [
     "name": "Wyoming",
     "capital": "Cheyenne"
 }]
+
+
+#1 HERE IS MY WELCOME MESSAGE
+print("Welcome to guess the Capital of the State!!??!???!")
+
+
+
+#2 RANDOM SHUFFLE Learned at W3 schools..
+import random
+random.shuffle(states)
+#print(states)
+
+
+
+random_state = states[0]["name"]
+random_capital = states[0]["capital"]
+print (random_state)
+print (random_capital)
+
+answers = input(f"What is the capital of {random_state}: ")
+
+correct = 0
+incorrect = 0 
+
+if answers == random_capital:
+    correct = 1
+    print("correct")
+else:
+    print("incorrect")
+
+print(correct)
+
+def function():
+    phrase = input("Please enter a word or phrase: ")
+    print("The length of", phrase, "is", str(len(phrase)))
+    if (phrase == "quit"):
+        return print("You have quit")
+    else: function()      
+function()
