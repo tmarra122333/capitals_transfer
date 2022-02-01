@@ -167,29 +167,28 @@ random.shuffle(states)
 #print(states)
 
 
+#3 Assign variables 
 
-random_state = states[0]["name"]
-random_capital = states[0]["capital"]
-print (random_state)
-print (random_capital)
+def play():
+    random_state = states[0]["name"]
+    random_capital = states[0]["capital"]
+    print (random_state)
+    print (random_capital)
 
-answers = input(f"What is the capital of {random_state}: ")
+    answers = input(f"What is the capital of {random_state}?!?: ")
 
-correct = 0
-incorrect = 0 
+    correct = 0
+    incorrect = 0 
 
-if answers == random_capital:
-    correct = 1
-    print("correct")
-else:
-    print("incorrect")
+    if answers == random_capital:
+        correct =+ 1
+        print("correct")
+    else:
+        print("incorrect")
 
-print(correct)
+    import random
+    random.shuffle(states)
 
-def function():
-    phrase = input("Please enter a word or phrase: ")
-    print("The length of", phrase, "is", str(len(phrase)))
-    if (phrase == "quit"):
-        return print("You have quit")
-    else: function()      
-function()
+    print(correct+1)
+    play()
+play()
