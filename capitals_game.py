@@ -162,33 +162,47 @@ print("Welcome to guess the Capital of the State!!??!???!")
 
 
 #2 RANDOM SHUFFLE Learned at W3 schools..
-import random
-random.shuffle(states)
+
 #print(states)
 
 
 #3 Assign variables 
 
 def play():
+    correct = 0
+    incorrect = 0 
+    import random
+    random.shuffle(states)
+
     random_state = states[0]["name"]
     random_capital = states[0]["capital"]
     print (random_state)
     print (random_capital)
 
-    answers = input(f"What is the capital of {random_state}?!?: ")
+    for i in (states):    
+        questions = input("What is the capital of " + i["name"] + "?!?:")
 
-    correct = 0
-    incorrect = 0 
 
-    if answers == random_capital:
-        correct =+ 1
-        print("correct")
-    else:
-        print("incorrect")
-
-    import random
-    random.shuffle(states)
-
-    print(correct+1)
-    play()
+        if questions == i["capital"]:
+            correct += 1
+            print(f" Yessir, You have {correct} correct")
+            print(f" You have {incorrect} incorrect")
+        else:
+            incorrect += 1
+            print(f" Wrong!, you have {incorrect} incorrect")
+            print(f" You have {correct} correct")
+    print("Game Over ---- Press Y to play again")
+    play_again = input()
+    if play_again.upper() == "Y":
+        play()
 play()
+
+
+
+
+
+
+    # for x in questions:
+    #     if x == "correct":
+    #         print(correct)
+
